@@ -10,13 +10,24 @@ h2 {
 
 textarea {
 
+    width: 200px;
+    height: 200px;
+
         
     display: block;
     margin: 0px auto;
 
 }
 
-.btn-location {
+.wrapper {
 
-    padding: 20px 36%;
+    text-align: center;
+
+    padding: 20px;
+}
+
+.btn-location {
+    display: inline-block;
+
+
 }
