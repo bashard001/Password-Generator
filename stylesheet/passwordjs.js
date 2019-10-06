@@ -21,6 +21,7 @@ var possiblePassword = '';
 
 
 generate.addEventListener('click', function () {
+    for (var i = 0; i < 200; i++){
 
     var passwordL = prompt('choose the length of your password between 8 and 128 characters')
 if ((Number(passwordL) < 8) ||
@@ -32,7 +33,7 @@ if ((Number(passwordL) < 8) ||
 
 
 };
-
+    }
     var specialchar = confirm('do you want special characters?');
 var numberpass = confirm('do you want numbers in the password?');
 var lowercase = confirm('do you want lower case characters?');
