@@ -6,6 +6,10 @@ html, body{
 *,::after,::before {
     box-sizing: border-box;
 }
+body{
+    background-image: url("background-2.jpg");
+    background-size: cover;
+}
 header {
 
     width: 100%;
@@ -21,9 +25,8 @@ header {
     color: aliceblue;
 }
 .container{
-    background-image: url("background-2.jpg");
-    height: 100vh;
-    background-size: cover;
+    
+    height: 75vh;
 }
 h2 {
     margin-top: 0px;
@@ -60,4 +63,15 @@ textarea {
 }
 button{
     cursor: pointer;
+}
+footer {
+    display: block;
+    bottom: 0;
+  color:#ddd;
+  background-color:rgba(40,46,52,.5);
+  text-align:center;
+  padding:50px 80px 30px;
+  align-items: center; 
+  justify-content: center;
+
 }
