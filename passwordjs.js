@@ -11,17 +11,47 @@ var special = "!#$%&'()*+,-./:;<=>?@[^_`{|}~"
 var ucle = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 var lcle = "abcdefghijklmnopqrstuvwxyz";
-
-
+var modal = document.getElementById("selectionModal");
+var closeModal = document.getElementsByClassName("close")[0];
 var possiblePassword = '';
+let yesB = document.getElementById("yesB")
+let noB = document.getElementById("noB")
+
+let optionsArr = ['do you want special characters?','do you want numbers in the password?','do you want lower case characters?','do you want Uppercase characters?']
+let q = 0;
+generate.addEventListener("click", function(){
+    let pos = 0;
+    let o = 0;
+    let id = setInterval(frame, 5)
+    let modalContent = document.querySelector(".modal-content");
+    modalContent.children[1].textContent = optionsArr[0]
+modal.style.display= "block"
+    function frame (){
+        if (pos == 100) {
+            clearInterval(id);
+          } else {
+            pos++; 
+            
+            modalContent.style.top = pos + "px";  
+            modalContent.style.opacity = o += .01;
+          }
+    }
+    
+
+    
+})
+
+closeModal.addEventListener("click", function(){
+modal.style.display= "none"
+})
 
 
 
-generate.addEventListener('click', function () {
+generateold.addEventListener('click', function () {
     
     var passwordL = prompt('choose the length of your password between 8 and 128 characters')
     
-while ((passwordL < 8) ||
+if ((passwordL < 8) ||
     (passwordL > 128)
 ) {
 
