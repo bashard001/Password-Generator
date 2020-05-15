@@ -68,18 +68,26 @@ position: relative;
  background-color: #fefefe;
  top: 0;
  opacity: 0;
+ border-radius: 8px;
     right: auto;
     left: auto;
     margin: auto;
-    padding: 20px;
+    padding: 10px 20px;
     border: 1px solid #888;
-    width: 60%;
+    width: 40%;
   }
   .close {
     color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
+  }
+  .close:hover, button:hover {
+      cursor: pointer;
+  }
+
+  button {
+      border-radius: 5px;
   }
 .wrapper {
 
