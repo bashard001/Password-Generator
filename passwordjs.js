@@ -53,7 +53,7 @@ generate.addEventListener("click", function () {
     passwordL = prompt('Choose the length of your password between 8 and 128 characters')
     if (passwordL === null) {
         return
-    } else {
+    } else if(typeof passwordL  === "string"){ alert('Invalid input')} else {
         while ((passwordL < 8) ||
             (passwordL > 128)
         ) {
