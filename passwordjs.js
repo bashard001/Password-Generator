@@ -24,11 +24,11 @@ var lowercase;
 var uppercase;
 var passwordL = 8;
 
-let optionsArr = ['do you want special characters?', 'do you want numbers in the password?', 'do you want lower case characters?', 'do you want Uppercase characters?']
+let optionsArr = ['Do you want special characters?', 'Do you want numbers in the password?', 'Do you want lower case characters?', 'Do you want Uppercase characters?']
 let q = 0;
 
 
-function modalFun (){
+function modalFun() {
     let pos = 0;
     let o = 0;
     let id = setInterval(frame, 5)
@@ -50,21 +50,23 @@ function modalFun (){
 
 }
 generate.addEventListener("click", function () {
-    passwordL = prompt('choose the length of your password between 8 and 128 characters')
-    if (passwordL === null){
-       return
+    passwordL = prompt('Choose the length of your password between 8 and 128 characters')
+    if (passwordL === null) {
+        return
     } else {
         while ((passwordL < 8) ||
             (passwordL > 128)
         ) {
-            alert('invalid input')
 
-            passwordL = prompt('choose the length of your password between 8 and 128 characters');
+            if (passwordL === null) { return } else {
+                alert('Invalid input, between 8 and 128 characters')
+                passwordL = prompt('Choose the length of your password between 8 and 128 characters');
+            }
         }
         modalFun()
     }
 
-   
+
 })
 yesB.addEventListener("click", function () {
     switch (q) {
@@ -150,8 +152,12 @@ function findPassword() {
 
         possiblePassword = possibleChar[Math.floor(Math.random() * possibleChar.length
         )]
+        if (possiblePassword !== undefined) {
+            result.textContent += possiblePassword;
+        } else {
+            result.textContent = "So which characters you want me to use for the password again???"
+        }
 
-        result.textContent += possiblePassword;
 
 
     }
