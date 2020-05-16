@@ -50,10 +50,10 @@ function modalFun() {
 
 }
 generate.addEventListener("click", function () {
-    passwordL = prompt('Choose the length of your password between 8 and 128 characters')
+    passwordL = Number(prompt('Choose the length of your password between 8 and 128 characters'))
     if (passwordL === null) {
         return
-    } else if(typeof passwordL  === "string"){ alert('Invalid input')} else {
+    } else if (typeof passwordL === "string" || isNaN(passwordL)) { alert('Invalid input') } else {
         while ((passwordL < 8) ||
             (passwordL > 128)
         ) {
@@ -163,11 +163,11 @@ function findPassword() {
     }
 }
 
-window.addEventListener("click", function(event) {
+window.addEventListener("click", function (event) {
     if (event.target == modal) {
-      modal.style.display = "none";
+        modal.style.display = "none";
     }
-  }) 
+})
 
 cntC.addEventListener('click', function copyPassword() {
 
